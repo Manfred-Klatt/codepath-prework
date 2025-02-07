@@ -1,0 +1,20 @@
+body {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.144);
+  }
+  
+  button {
+    padding: 15px;
+    background-color: #ff0000; 
+    color: rgb(255, 255, 255);
+  }
+  
+  button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.452);
+  }
+  
+  button:active,
+  button:focus {
+    outline: none;
+  }
