@@ -1,50 +1,37 @@
 /* Task 1: Compile Participant Details with Shorthand Property Names */
 // TODO: Construct an object named `participant` with properties for `name`, `age`, and `studyField`. Utilize shorthand property names to simplify your code.
 
-
-function participantInfo(name, age, studyField)
-{
-    return {
-        name,
-        age,
-        studyField
-    };
-}
+const participant = {
+    name: "John Doe",
+    age: 25,
+    studyField: "Computer Science"
+};
 
 
 /* Task 2: Implement a Shorthand Function for Participant Info */
 // TODO: Copy the `participant` object by adding a shorthand method named `displayInfo` that prints the participant's details using `this` and a template string.
 
-function participantInfo(name, age, studyField) {
-    return {
-        name,
-        age,
-        studyField,
-        displayInfo() {
-            console.log(`Name: ${this.name}, Age: ${this.age}, Study Field: ${this.studyField}`);
-        }
-    };
-}
+const participantInfo = (participant) => ({
+    ...participant,
+    displayInfo() {
+        console.log(`Name: ${this.name}, Age: ${this.age}, Study Field: ${this.studyField}`);
+    }
+});
 
 
 /* Task 3: Implement a Same Shorthand Arrow Function for Participant Info */
 // TODO: Echo the above task with an arrow function. Observe the behavior of `this` and explain your findings.
 /*
  * Observations:
- * When displayInfo is called as a method of the returned object, 'this' refers to the object itself.
- * 
+ * The arrow function does not have its own `this` and instead captures `this` from its surrounding lexical scope.
+ * If used inside an object, `this` would be undefined or inherited incorrectly.
  */
 
-const participantInfo = (name, age, studyField) => {
-    return {
-        name,
-        age,
-        studyField,
-        displayInfo: function() {
-            console.log(`Name: ${this.name}, Age: ${this.age}, Study Field: ${this.studyField}`);
-        }
-    };
-};
+const partInfo = (participant) => ({
+    displayInfo: function() {
+        console.log(`Name: ${this.name}, Age: ${this.age}, Study Field: ${this.studyField}`);
+    }
+});
 
 
 /* Task 4: Using Computed Property Names */
@@ -58,3 +45,5 @@ function updateParticipantInfo(property, value, object)
     };
 }
 
+const info = participantInfo(participant);
+info.displayInfo();
