@@ -1,0 +1,51 @@
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+}
+
+.gify-display {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  margin-top: 1em;
+  padding: 1em;
+}
+
+.row, .submit-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1em;
+  border-radius: 5px;
+  margin-top: 1em;
+}
+
+.row > img {
+  border-radius: 10px;
+}
+
+input {
+  height: 2em;
+  border-radius: 4px;
+}
+
+button {
+  background-color: rgb(255, 140, 0);
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 10px;
+  padding: 1em 2em;
+}
+
+button:active {
+  background-color: rgb(255, 140, 0);
+}
+
+button:hover {
+  cursor: pointer;
+}
