@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to my Pokédex!</title>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-100 min-h-screen p-8">
+    <div class="fixed top-0 right-0 p-4 z-50 flex flex-col gap-4">
+      <a
+        href="index.html"
+        class="bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition duration-200"
+      >
+        Full Pokédex
+      </a>
+      <a
+        href="pokegame.html"
+        class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition duration-200"
+      >
+        Pokégame
+      </a>
+    </div>
+    <div id="root"></div>
+
+    <script type="text/javascript">
+      const { createElement } = React;
+
+      const pokemonData = [
+        { id: 4, name: "Charmander", type: ["fire"], base_experience: 62 },
+        { id: 7, name: "Squirtle", type: ["water"], base_experience: 63 },
+        { id: 11, name: "Metapod", type: ["bug"], base_experience: 72 },
+        {
+          id: 12,
+          name: "Butterfree",
+          type: ["bug", "flying"],
+          base_experience: 178,
+        },
+        { id: 25, name: "Pikachu", type: ["electric"], base_experience: 112 },
+        { id: 39, name: "Jigglypuff", type: ["normal"], base_experience: 95 },
+        {
+          id: 94,
+          name: "Gengar",
+          type: ["ghost", "poison"],
+          base_experience: 225,
+        },
+        { id: 133, name: "Eevee", type: ["normal"], base_experience: 65 },
+      ];
+
+      // Function to capitalize the first letter of each type
+      function capitalizeType(type) {
+        return type.charAt(0).toUpperCase() + type.slice(1);
+      }
+
+      function Pokecard({ pokemon }) {
+        const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
+
+        return createElement(
+          "div",
+          {
+            className:
+              "bg-white shadow-md rounded-2xl p-6 w-64 text-center border border-gray-200",
+          },
+          createElement("img", {
+            src: imageUrl,
+            alt: pokemon.name,
+            className: "w-24 h-24 mx-auto mb-4",
+          }),
+          createElement(
+            "h2",
+            { className: "text-2xl font-bold capitalize text-gray-800 mb-2" },
+            pokemon.name
+          ),
+          createElement(
+            "p",
+            { className: "text-sm text-gray-500 mb-2" },
+            `Type: ${pokemon.type.join(" / ")}` // Capitalizing each type
+          ),
+          createElement(
+            "p",
+            { className: "text-sm text-gray-500" },
+            `EXP: ${pokemon.base_experience}`
+          )
+        );
+      }
+
+      function App() {
+        return createElement(
+          "div",
+          { className: "flex flex-col items-center gap-8" },
+          createElement(
+            "h1",
+            { className: "text-4xl font-bold text-red-500 text-center" },
+            "Pokédex"
+          ),
+          createElement(
+            "div",
+            {
+              className: "grid grid-cols-4 gap-8", // Increased gap from 6 to 8 for more space
+            },
+            pokemonData.map((pokemon) =>
+              createElement(Pokecard, { key: pokemon.id, pokemon })
+            )
+          )
+        );
+      }
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(createElement(App));
+    </script>
+  </body>
+</html>
