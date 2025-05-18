@@ -11,11 +11,27 @@
   <link rel="stylesheet" href="jeopardy.css">
 </head>
 <body>
+  <div class="game-container">
+    <div class="top-header">
+      <h1>Jeopardy!</h1>
+      <div class="score">
+        Score: $<span class="score-count">0</span>
+      </div>
+    </div>
+    
+    <button id="start">Start Game</button>
+    
+    <div id="spin-container">
+      <div class="spinner"></div>
+    </div>
+    
+    <table id="jeopardy"></table>
+  </div>
 
-<script src="https://unpkg.com/jquery"></script>
-<script src="https://unpkg.com/axios/dist/axios.js"></script>
-<script src="https://unpkg.com/lodash"></script>
-<script src="jeopardy.js"></script>
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="https://unpkg.com/axios/dist/axios.js"></script>
+  <script src="https://unpkg.com/lodash"></script>
+  <script src="jeopardy.js"></script>
 
 </body>
 </html>
