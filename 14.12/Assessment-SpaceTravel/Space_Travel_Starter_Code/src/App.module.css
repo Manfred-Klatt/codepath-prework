@@ -1,0 +1,12 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.mainContent {
+  flex: 1;
+  min-height: 80vh; /* Ensure minimum height to prevent layout shifts */
+  position: relative;
+  transition: all 0.3s ease; /* Smooth transitions between states */
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Space Travel</title>
+
+	<link
+		rel="stylesheet"
+		type="text/css"
+		href="https://meyerweb.com/eric/tools/css/reset/reset.css"
+	>
+	<!-- Add direct link to the index.css file for static server -->
+	<link rel="stylesheet" href="/src/index.css">
+	<style>
+		/* Fallback styles if CSS modules don't work in static server */
+		.app-container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 2rem;
+			font-family: Arial, sans-serif;
+		}
+		.hero {
+			background-color: #001f3f;
+			color: white;
+			padding: 4rem 2rem;
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+		.hero h1 {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+		.features {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 2rem;
+			margin-top: 2rem;
+		}
+		.feature-card {
+			background: white;
+			border-radius: 8px;
+			padding: 1.5rem;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		}
+		.feature-card h3 {
+			color: #0066cc;
+			margin-bottom: 1rem;
+			font-size: 1.5rem;
+		}
+		.feature-button {
+			display: inline-block;
+			background: #0066cc;
+			color: white;
+			padding: 0.5rem 1rem;
+			border-radius: 4px;
+			margin-top: 1rem;
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="root">
+		<!-- Fallback content for static server -->
+		<div class="app-container">
+			<div class="hero">
+				<h1>Space Travel</h1>
+				<p>The future of interplanetary exploration and evacuation</p>
+			</div>
+			
+			<section>
+				<h2>Welcome to Space Travel</h2>
+				<p>
+					In the not-so-distant future, where technology has evolved by leaps and bounds, 
+					humanity has achieved the unimaginable: we have successfully transformed other planets 
+					in the solar system into habitable environments. As Earth continues to face environmental challenges,
+					our mission is to facilitate the safe transportation of humanity to these new homes.
+				</p>
+				
+				<div class="features">
+					<div class="feature-card">
+						<h3>Manage Spacecraft</h3>
+						<p>View, build, and decommission spacecraft to support your evacuation efforts.</p>
+						<a href="src/pages/Spacecrafts/index.html" class="feature-button">View Fleet</a>
+					</div>
+					
+					<div class="feature-card">
+						<h3>Explore Planets</h3>
+						<p>Discover habitable planets and organize population transfers.</p>
+						<a href="src/pages/Planets/index.html" class="feature-button">View Planets</a>
+					</div>
+					
+					<div class="feature-card">
+						<h3>Build New Spacecraft</h3>
+						<p>Design and construct new spacecraft to expand your evacuation capabilities.</p>
+						<a href="src/pages/Construction/index.html" class="feature-button">Start Building</a>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+	
+	<!-- For development with Vite/React -->
+	<script type="module" src="/src/main.jsx"></script>
+</body>
+</html>

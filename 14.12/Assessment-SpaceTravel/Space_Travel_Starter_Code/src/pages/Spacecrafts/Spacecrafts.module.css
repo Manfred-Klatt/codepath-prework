@@ -1,0 +1,67 @@
+.spacecraftsPage {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.buildButton {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.buildButton:hover {
+  background-color: var(--secondary-color);
+}
+
+.spacecraftGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.emptyState h2 {
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+}
+
+.emptyState p {
+  margin-bottom: 30px;
+  color: var(--text-color);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.errorContainer {
+  padding: 30px;
+  border-radius: 8px;
+  background-color: #fff1f1;
+  border-left: 5px solid var(--danger-color);
+  margin: 40px auto;
+  max-width: 800px;
+}
+
+.errorContainer h2 {
+  color: var(--danger-color);
+  margin-bottom: 10px;
+}

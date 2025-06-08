@@ -1,0 +1,161 @@
+.spacecraftDetailPage {
+  background-color: var(--background-color);
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.backNavigation {
+  margin-bottom: 20px;
+}
+
+.backLink {
+  color: var(--primary-color);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+.backLink:hover {
+  color: var(--secondary-color);
+}
+
+.spacecraftCard {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.imageContainer {
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.spacecraftImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.spacecraftInfo {
+  padding: 30px;
+}
+
+.spacecraftName {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+.infoRow {
+  display: flex;
+  margin-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 15px;
+}
+
+.label {
+  flex: 0 0 150px;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.value {
+  flex: 1;
+}
+
+.description {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.description h3 {
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+}
+
+.description p {
+  line-height: 1.6;
+}
+
+.actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.actionButton {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  margin-left: 10px;
+}
+
+.destroyButton {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.editButton {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+.editButton:hover {
+  opacity: 1;
+}
+
+.editForm {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pictureInput {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.editActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.saveButton {
+  background-color: var(--success-color, #28a745);
+  color: white;
+}
+
+.cancelButton {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.destroyButton:hover {
+  background-color: #b52d3a;
+}
